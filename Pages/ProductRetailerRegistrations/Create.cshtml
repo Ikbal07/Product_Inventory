@@ -1,0 +1,42 @@
+﻿@page
+@model Product_Inventory.Pages.ProductRetailerRegistrations.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Product Retailer Registration</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductRetailerRegistration.ProductId" class="control-label"></label>
+                <select asp-for="ProductRetailerRegistration.ProductId" class ="form-control" asp-items="ViewBag.ProductId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductRetailerRegistration.RetailerId" class="control-label"></label>
+                <select asp-for="ProductRetailerRegistration.RetailerId" class ="form-control" asp-items="ViewBag.RetailerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductRetailerRegistration.DeliveryStatus" class="control-label"></label>
+                <select asp-for="ProductRetailerRegistration.DeliveryStatus" class="form-control" asp-items="ViewBag.DeliveryStatus"></select>
+                <span asp-validation-for="ProductRetailerRegistration.DeliveryStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

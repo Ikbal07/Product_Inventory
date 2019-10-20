@@ -1,0 +1,39 @@
+﻿@page
+@model Product_Inventory.Pages.Retailers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Retailer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Retailer.Name" class="control-label"></label>
+                <input asp-for="Retailer.Name" class="form-control" />
+                <span asp-validation-for="Retailer.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Retailer.ContactNumber" class="control-label"></label>
+                <input asp-for="Retailer.ContactNumber" class="form-control" />
+                <span asp-validation-for="Retailer.ContactNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

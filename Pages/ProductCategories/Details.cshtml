@@ -1,0 +1,38 @@
+﻿@page
+@model Product_Inventory.Pages.ProductCategories.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCategory.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductCategory.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCategory.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductCategory.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCategory.CategoryCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductCategory.CategoryCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.ProductCategory.Id">Edit</a> |
+    
+</div>

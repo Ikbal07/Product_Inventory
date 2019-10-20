@@ -1,0 +1,40 @@
+﻿@page
+@model Product_Inventory.Pages.ProductRetailerRegistrations.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Delete this?</h3>
+<div>
+    <h4>ProductRetailerRegistration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductRetailerRegistration.Product)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductRetailerRegistration.Product.ProductDisplayName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductRetailerRegistration.Retailer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductRetailerRegistration.Retailer.RetailerDisplayName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductRetailerRegistration.DeliveryStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductRetailerRegistration.DeliveryStatus)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ProductRetailerRegistration.Id" />
+        <input type="submit" value="Delete" class="btn btn-warning" /> |
+       
+    </form>
+</div>

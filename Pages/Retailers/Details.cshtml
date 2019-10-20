@@ -1,0 +1,38 @@
+﻿@page
+@model Product_Inventory.Pages.Retailers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Retailer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Retailer.RetailerCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Retailer.RetailerCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Retailer.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Retailer.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Retailer.ContactNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Retailer.ContactNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.Retailer.Id">Edit</a> |
+  
+</div>

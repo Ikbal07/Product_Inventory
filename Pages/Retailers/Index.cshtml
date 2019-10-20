@@ -1,0 +1,43 @@
+﻿@page
+@model Product_Inventory.Pages.Retailers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Retailer Registry</h2>
+
+<p>
+    <a class="btn btn-warning" asp-page="Create">Register a New Retailer</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Retailer[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Retailer[0].ContactNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Retailer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-warning" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-warning" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
